@@ -5,6 +5,9 @@ on:
     - cron: '0 8 * * *'   # 每天凌晨 8 点自动运行（你可以按需要调整）
   workflow_dispatch:     # 允许你手动触发
 
+permissions:
+  contents: write   # 允许 GitHub Actions push 代码
+
 jobs:
   build:
     runs-on: ubuntu-latest

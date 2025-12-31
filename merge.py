@@ -12,9 +12,10 @@ TCP_TIMEOUT = 10
 DOWNLOAD_TIMEOUT = 10
 TEST_FILE = "https://cachefly.cachefly.net/50mb.test"
 
+
 def extract_urls(html):
     # 用正则提取所有 https:// 开头的链接
-    urls = re.findall(r'https?://[A-Za-z0-9./?=&_-]+', html)
+    urls = re.findall(r'https://fn\d*[A-Za-z0-9./?=&_-]+', html)
     return list(set(urls))
 
 def get_host_port_from_url(link):
